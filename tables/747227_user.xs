@@ -1,4 +1,5 @@
 // Meu primeiro comentário via VS Code
+// Teste de conexão com o banco de dados 
 table user {
   auth = true
 
