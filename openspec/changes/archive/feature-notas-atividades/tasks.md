@@ -1,0 +1,3 @@
+- [x] Criar tabela activity_grades
+- [x] Criar API POST /activity_grades
+- [x] Criar API GET /activity_grades
