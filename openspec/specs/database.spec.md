@@ -3,7 +3,7 @@
 ## Purpose
 This document specifies the database schema for the EduTrack AI platform.
 
-## ADDED Requirements
+## Requirements
 
 ### Requirement: Create academic_tasks table
 The system SHALL store academic task information including title, description, due date, status, and subject.
