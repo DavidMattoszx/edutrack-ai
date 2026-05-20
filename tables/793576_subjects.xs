@@ -3,6 +3,7 @@ table subjects {
 
   schema {
     int id
+    int user_id
     timestamp created_at?=now {
       visibility = "private"
     }

@@ -1,3 +1,3 @@
-api_group "grades" {
-  canonical = "grades"
+api_group grades {
+  canonical = "7jHoEBCH"
 }
