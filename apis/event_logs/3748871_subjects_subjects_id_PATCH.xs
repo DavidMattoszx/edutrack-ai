@@ -1,7 +1,6 @@
 // Edit subjects record
 query "subjects/{subjects_id}" verb=PATCH {
   api_group = "Event Logs"
-
   auth = "user"
 
   input {
@@ -16,12 +15,12 @@ query "subjects/{subjects_id}" verb=PATCH {
       where = $db.subjects.id == $input.subjects_id && $db.subjects.user_id == $auth.id
       return = {type: "single"}
     } as $subjects
-
+  
     precondition ($subjects != null) {
       error_type = "notfound"
       error = "Not Found."
     }
-
+  
     util.get_raw_input {
       encoding = "json"
       exclude_middleware = false

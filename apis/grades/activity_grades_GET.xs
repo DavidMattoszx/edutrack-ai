@@ -8,7 +8,7 @@ query activity_grades verb=GET {
 
   stack {
     // Query grades assigned by the authenticated teacher
-    db.query "" {
+    db.query activity_grades {
       where = $db.activity_grades.teacher_id == $auth.id
       return = {type: "list"}
     } as $grades

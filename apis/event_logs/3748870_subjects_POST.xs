@@ -1,7 +1,6 @@
 // Add subjects record
 query subjects verb=POST {
   api_group = "Event Logs"
-
   auth = "user"
 
   input {

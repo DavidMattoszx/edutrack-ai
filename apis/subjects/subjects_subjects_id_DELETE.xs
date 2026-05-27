@@ -1,6 +1,6 @@
-// Delete subjects record.
+// Delete a subject record if it belongs to the authenticated user
 query "subjects/{subjects_id}" verb=DELETE {
-  api_group = "Event Logs"
+  api_group = "subjects"
   auth = "user"
 
   input {
@@ -11,13 +11,13 @@ query "subjects/{subjects_id}" verb=DELETE {
     db.query subjects {
       where = $db.subjects.id == $input.subjects_id && $db.subjects.user_id == $auth.id
       return = {type: "single"}
-    } as $subjects
-  
-    precondition ($subjects != null) {
+    } as $subject
+
+    precondition ($subject != null) {
       error_type = "notfound"
       error = "Not Found."
     }
-  
+
     db.del subjects {
       field_name = "id"
       field_value = $input.subjects_id

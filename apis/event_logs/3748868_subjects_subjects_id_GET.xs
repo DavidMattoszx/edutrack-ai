@@ -1,7 +1,6 @@
 // Get subjects record
 query "subjects/{subjects_id}" verb=GET {
   api_group = "Event Logs"
-
   auth = "user"
 
   input {

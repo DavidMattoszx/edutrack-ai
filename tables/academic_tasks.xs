@@ -17,6 +17,14 @@ table academic_tasks {
   
     // Status atual da tarefa (ex: pendente, em_progresso, concluida)
     text status?=pendente
+
+    // Prioridade da tarefa
+    text priority?=media {
+      description = "Task priority: baixa, media, or alta"
+    }
+
+    // Referência ao usuário proprietário da tarefa
+    int user_id
   
     // Referência para a disciplina à qual a tarefa pertence
     int subject_id {
@@ -28,5 +36,6 @@ table academic_tasks {
     {type: "primary", field: [{name: "id"}]}
     {type: "btree", field: [{name: "created_at", op: "desc"}]}
     {type: "btree", field: [{name: "subject_id"}]}
+    {type: "btree", field: [{name: "user_id"}]}
   ]
 }
