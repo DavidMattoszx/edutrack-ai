@@ -1,6 +1,7 @@
 // Add subjects record
 query subjects verb=POST {
   api_group = "Event Logs"
+  auth = "user"
 
   input {
     dblink {
@@ -10,7 +11,7 @@ query subjects verb=POST {
 
   stack {
     db.add subjects {
-      data = {created_at: "now"}
+      data = {user_id: $auth.id}
     } as $subjects
   }
 
